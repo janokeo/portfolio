@@ -17,7 +17,7 @@ body {
         font-style: normal;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #ff6600;
     }
 
 header {
@@ -33,13 +33,14 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     list-style: none;
+    padding-right: 1em;
 }
 
 nav ul li {
@@ -56,7 +57,18 @@ nav ul li a {
 nav ul li a:hover {
     color: #ff6600;
 }
-
+#logo {
+    z-index: 2000;
+    position: fixed;
+    top: -40px;
+    float: left;
+    padding-left: 1em;
+    
+}
+#logo:hover {
+    color: #ff6600;
+    cursor: pointer;
+}
 
 section {
     padding: 2em;
@@ -70,6 +82,7 @@ section {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+
 }
 
 #welcome p {
@@ -95,7 +108,7 @@ footer {
     bottom: 0;
 }
 #portfolio {
-    height: 2000px;
+    height: 1600px;
 }
 .portfolio-item {
     position: relative;
@@ -189,3 +202,215 @@ footer {
     transition: background-color 0.3s;
 }
 
+.big-btn:hover{
+    transition: transform 0.3s ease-in-out ;
+    transform: scale(0.5);
+}
+
+
+/* Responsive for mobile devices */
+@media (max-width: 576px) {
+    * {
+        font-size: 16px;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+
+    }
+    #logo {
+        padding-right: .5em;
+        right: 0;
+        
+    }
+    /* Home Section */
+    #home {
+        height: auto;
+    }
+    .welcome {
+        flex-direction: column;
+        align-items: center;
+    }
+    .big-btn {
+        margin-top: 20px;
+    }
+    /* About Section */
+    #about {
+        height: auto;
+        padding: 20px;
+    }
+    #about img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        float: none;
+    }
+    
+    #about img:hover {
+        opacity: 0.5;
+        transition: transform .3s ease-in-out ;
+    
+
+    }
+    /* Portfolio Section */
+    #portfolio {
+        grid-template-columns: repeat(1, 1fr);
+        height: max-content;
+    }
+    .portfolio-item {
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+    /* Navigation */
+    nav {
+        height: 5em;
+    }
+    
+    nav ul {
+        display: none;
+        
+    }
+    nav ul li {
+        padding: 1em;
+    }
+    nav ul.active {
+        height: max-content;
+        display: block;
+        flex-direction: row;
+        text-align: center;
+        background-color: #ff660083;
+        border-radius: 5px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-top: 9em;
+        backdrop-filter: blur(5px);
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    
+    /* Contact Section */
+    #contact {
+        padding: 20px;
+    }
+    nav .hamburger {
+        display: block;
+        cursor: pointer;
+    #contact h2 {
+        font-size: 2rem;
+    }
+    #contact p {
+        margin: 10px 0;
+    }
+    /* Contact Form */
+    .contact-form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+/* Responsive for tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* Home Section */
+    #home {
+        height: auto;
+    }
+    .welcome {
+        flex-direction: column;
+        align-items: center;
+    }
+    .big-btn {
+        margin-top: 20px;
+    }
+    /* About Section */
+    #about {
+        height: auto;
+        padding: 20px;
+    }
+    #about img {
+        width: 100%;
+        height: auto;
+    }
+    /* Portfolio Section */
+    #portfolio {
+        /* grid-template-columns: repeat(2, 1fr); */
+        height: max-content;
+    }
+    .portfolio-item {
+        width: 100%;
+    }
+}
+
+/* Responsive for laptops and desktops */
+@media (min-width: 769px) {
+    /* Home Section */
+    #home {
+        height: auto;
+    }
+    .welcome {
+        flex-direction: column;
+        align-items: center;
+    }
+    .big-btn {
+        margin-top: 20px;
+    }
+    /* About Section */
+    #about {
+        height: auto;
+        padding: 20px;
+    }
+    #about img {
+        width: 100%;
+        height: auto;
+    }
+    /* Portfolio Section */
+    #portfolio {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .portfolio-item {
+        width: 100%;
+    }
+}
+
+/* Responsive for 4k and ultrawide screens */
+@media (min-width: 1921px) {
+    /* Home Section */
+    #home {
+        height: auto;
+    }
+    .welcome {
+        flex-direction: column;
+        align-items: center;
+    }
+    .big-btn {
+        margin-top: 20px;
+    }
+    /* About Section */
+    #about {
+        height: auto;
+        padding: 20px;
+    }
+    #about img {
+        width: 100%;
+        height: auto;
+    }
+    /* Portfolio Section */
+    #portfolio {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .portfolio-item {
+        width: 100%;
+    }
+}
