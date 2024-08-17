@@ -7,3 +7,14 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
+
+
+document.querySelector('#logo').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('active');
+});
+
+document.querySelector('nav ul').addEventListener('click', function(e) {
+    if (e.target.nodeName === 'A') {
+        document.querySelector('nav ul').classList.remove('active');
+    }
+});
